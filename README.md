@@ -28,6 +28,7 @@ This application is docker friendly. Use below command to build and run this app
 ```
 $ docker-compose up -d
 ```
+[![asciicast](https://asciinema.org/a/163519.png)](https://asciinema.org/a/163519)
 
 ##### API Specs:
 
