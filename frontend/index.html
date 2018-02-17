@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">  
+  <link rel="stylesheet" type="text/css" href="css/stock.css">
+  <title>Stock App</title>
+</head>
+
+<body>
+
+  <!-- component template -->
+<script type="text/x-template" id="grid-template">
+    <div>
+        <ul class="nav">
+                <li>
+                    <a href="#" @click='home()'>Home</a>
+                </li>
+                <li id="search">
+                        <input type="text" name="search_text" id="search_text" placeholder="Search" v-model='keyword'/>
+                        <input type="button" name="search_button" id="search_button" @click='search()'></a>
+                </li>
+        </ul> <br /><br />
+        <h3> <center> {{ message }} </center></h3><br />
+        <div>
+        <table>
+            <thead>
+            <tr>
+                <th v-for="key in columns"
+                @click="sortBy(key)"
+                :class="{ active: sortKey == key }">
+                {{ key | capitalize }}
+                <span class="arrow" :class="sortOrders[key] > 0 ? 'asc' : 'dsc'">
+                </span>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="entry in filteredData">
+                <td v-for="key in columns">
+                {{entry[key]}}
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <p v-if="searchMode == false">
+            <br /> {{ disclaimer }}
+        </p>
+        </div>
+    </div>
+</script>
+
+<div id="stockApp"> 
+    <stock-grid
+        :data="gridData"
+        :columns="gridColumns">
+    </stock-grid>
+</div> 
+</div>
+
+<script type="text/javascript" src="https://unpkg.com/vue@latest/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="js/stock.js"></script>
+</body>
+</html>
+
