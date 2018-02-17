@@ -29,6 +29,14 @@ This application is docker friendly. Use below command to build and run this app
 $ docker-compose up -d
 ```
 
+##### API Specs:
+
+There are two APIs
+
+- `/` : Returns list top 10 stock entries
+- `/search?keyword=<search_keyword>` : Returns stock entries filtered by name
+
+
 #### Frontend
 
 This repo has frontend code, however, it is not served through cherrypy. If you want to run frontend locally, use below commands
