@@ -43,7 +43,7 @@ There are two APIs
 This repo has frontend code, however, it is not served through cherrypy. If you want to run frontend locally, use below commands
 ```
 $ cd frontend
-$ python -m SimpleHTTPServer .
+$ python -m SimpleHTTPServer <port>
 ```
 Make sure to update API baseURL in `js/stock.js`. If everything goes well, you should be able to see this on your browser:
 ![UI-Screenshot](https://s3.ap-south-1.amazonaws.com/abhishek-bhavcopy/static/ui-screenshot.png)
